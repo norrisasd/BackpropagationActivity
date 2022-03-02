@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackpropagationActivity", "BackpropagationActivity\BackpropagationActivity.csproj", "{4FE4EE0F-1475-47CC-802B-57DEA63FDD66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FE4EE0F-1475-47CC-802B-57DEA63FDD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE4EE0F-1475-47CC-802B-57DEA63FDD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE4EE0F-1475-47CC-802B-57DEA63FDD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE4EE0F-1475-47CC-802B-57DEA63FDD66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16BFEB1F-E8C6-406C-961C-E4D98A76B018}
+	EndGlobalSection
+EndGlobal
