@@ -39,20 +39,76 @@ namespace BackpropagationActivity
                 switch (result)
                 {
                     case Genders.Male:
-                        return 1;
+                        return 0;
                 }
             }
-            return 0;
+            return 1;
+        }
+        public double RangeCholesterol(double n)
+        {
+            if (n >= 240)
+            {
+                return 1.0;
+            }else if( n<240 && n >= 200)
+            {
+                return 0.5;
+            }
+            else
+            {
+                return 0.0;
+            }
+        }
+        public double RangeBloodPressure(double n)
+        {
+            if (n >= 180)
+            {
+                return 1.0;
+            }
+            else if (n < 180 && n >= 140)
+            {
+                return 0.85;
+            }
+            else if (n < 140 && n >= 130)
+            {
+                return 0.70;
+            }
+            else if (n < 130 && n >= 120)
+            {
+                return 0.5;
+            }
+            else
+            {
+                return 0.0;
+            }
+        }
+        public double RangeAge(double n)
+        {
+            if (n > 60)
+            {
+                return 1.0;
+            }
+            else if (n < 60 && n >= 41)
+            {
+                return 0.75; 
+            }
+            else if (n < 41 && n >= 19)
+            {
+                return 0.5;
+            }
+            else
+            {
+                return 0.0;
+            }
         }
     }
 
     public class HeartDisease
     {
-        public int age { get; set; }
-        public String sex { get; set; }
-        public int BP { get; set; }
-        public int cholestrol { get; set; }
-        public int heart_disease { get; set; }
+        public double age { get; set; }
+        public double sex { get; set; }
+        public double BP { get; set; }
+        public double cholestrol { get; set; }
+        public double heart_disease { get; set; }
     }
 
 }

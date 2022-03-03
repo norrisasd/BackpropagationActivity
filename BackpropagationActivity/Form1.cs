@@ -29,25 +29,26 @@ namespace BackpropagationActivity
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bp = new NeuralNet(4,3,1);
+            bp = new NeuralNet(4,1,1);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             List<HeartDisease> data = csvData.getRecords();
-            for (int i = 1; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 foreach(var d in data)
                 {
-                    bp.setInputs(0, d.age);
-                    bp.setInputs(1, csvData.ParseGender(d.sex));
-                    bp.setInputs(2, d.BP);
-                    bp.setInputs(3, d.cholestrol);
+                    bp.setInputs(0, csvData.RangeAge(d.age));
+                    bp.setInputs(1, d.sex);
+                    bp.setInputs(2, csvData.RangeBloodPressure(d.BP));
+                    bp.setInputs(3, csvData.RangeCholesterol(d.cholestrol));
                     bp.setDesiredOutput(0, d.heart_disease);
                     bp.learn();
-                    
+                    //System.Windows.Forms.MessageBox.Show(" " + d.age + " " + d.sex + " " + d.BP + " " + d.cholestrol);
                 }
             }
+            System.Windows.Forms.MessageBox.Show("Training Done");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -67,15 +68,15 @@ namespace BackpropagationActivity
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int age = Convert.ToInt32(textBox1.Text);
-            int gender = csvData.ParseGender(comboBox1.Text);
-            int bp = Convert.ToInt32(textBox2.Text);
-            int chol = Convert.ToInt32(textBox3.Text);
+            double age = Convert.ToDouble(textBox1.Text);
+            double gender = Convert.ToDouble(csvData.ParseGender(comboBox1.Text));
+            double bp = Convert.ToDouble(textBox2.Text);
+            double chol = Convert.ToDouble(textBox3.Text);
 
-            this.bp.setInputs(0, age);
+            this.bp.setInputs(0, csvData.RangeAge(age));
             this.bp.setInputs(1, gender);
-            this.bp.setInputs(2, bp);
-            this.bp.setInputs(3, chol);
+            this.bp.setInputs(2, csvData.RangeBloodPressure(bp));
+            this.bp.setInputs(3, csvData.RangeCholesterol(chol));
             this.bp.run();
 
             textBox4.Text = "" + this.bp.getOuputData(0);
