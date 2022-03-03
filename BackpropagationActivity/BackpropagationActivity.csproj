@@ -96,6 +96,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bmi.csv" />
     <None Include="heart_v2.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

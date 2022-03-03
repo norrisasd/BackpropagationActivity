@@ -19,13 +19,14 @@ namespace BackpropagationActivity
 
     class CsvData
     {
-        public List<HeartDisease> getRecords()
+        public List<BMI> getRecords()
         {
-            using (var reader = new StreamReader("C:\\Users\\norrisasd\\source\\repos\\BackpropagationActivity\\BackpropagationActivity\\heart_v2.csv"))
+            using (var reader = new StreamReader("C:\\Users\\norrisasd\\source\\repos\\BackpropagationActivity\\BackpropagationActivity\\bmi.csv"))
+            
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
 
-                List<HeartDisease> records = csv.GetRecords<HeartDisease>().ToList();
+                List<BMI> records = csv.GetRecords<BMI>().ToList();
 
 
                 return records;
@@ -39,17 +40,21 @@ namespace BackpropagationActivity
                 switch (result)
                 {
                     case Genders.Male:
-                        return 0;
+                        return 1;
                 }
             }
-            return 1;
+            return 0;
         }
         public double RangeCholesterol(double n)
         {
-            if (n >= 240)
+            if (n >= 500)
             {
                 return 1.0;
-            }else if( n<240 && n >= 200)
+            } else if (n < 500 && n >= 200)
+            {
+                return 0.75;
+            }
+            else if (n < 200 && n >151)
             {
                 return 0.5;
             }
@@ -66,7 +71,7 @@ namespace BackpropagationActivity
             }
             else if (n < 180 && n >= 140)
             {
-                return 0.85;
+                return 0.90;
             }
             else if (n < 140 && n >= 130)
             {
@@ -109,6 +114,14 @@ namespace BackpropagationActivity
         public double BP { get; set; }
         public double cholestrol { get; set; }
         public double heart_disease { get; set; }
+    }
+    public class BMI
+    {
+        public String Gender { get; set; }
+        public double Height { get; set; }
+        public double Weight { get; set; }
+        public double Index { get; set; }
+
     }
 
 }

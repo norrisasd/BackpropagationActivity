@@ -37,8 +37,6 @@ namespace BackpropagationActivity
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -118,22 +116,6 @@ namespace BackpropagationActivity
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 5;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(488, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 22);
-            this.textBox1.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(421, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 21);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Age";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -146,20 +128,20 @@ namespace BackpropagationActivity
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(357, 160);
+            this.label3.Location = new System.Drawing.Point(401, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Blood Pressure";
+            this.label3.Text = "Height";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(383, 207);
+            this.label4.Location = new System.Drawing.Point(397, 205);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Cholesterol";
+            this.label4.Text = "Weight";
             // 
             // textBox2
             // 
@@ -203,8 +185,6 @@ namespace BackpropagationActivity
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -213,6 +193,7 @@ namespace BackpropagationActivity
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,8 +209,6 @@ namespace BackpropagationActivity
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
